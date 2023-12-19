@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SHM Prediction Tool</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; padding: 50px; }
+        form { background-color: white; padding: 20px; border-radius: 8px; display: inline-block; }
+        input, button { margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Structural Health Monitoring Prediction</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Upload CSV File:</label><br>
+        <input type="file" name="file"><br>
+        <label for="week">Week Number:</label><br>
+        <input type="number" id="week" name="week" required><br>
+        <label for="average_strength">Average Strength:</label><br>
+        <input type="number" step="any" id="average_strength" name="average_strength" required><br>
+        <label for="weeks_ahead">Predict for How Many Weeks Ahead:</label><br>
+        <input type="number" id="weeks_ahead" name="weeks_ahead" required><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
